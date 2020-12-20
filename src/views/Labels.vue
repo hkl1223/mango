@@ -1,15 +1,13 @@
 <template>
   <div>
-    label
-    <Nav/>
-  </div>
+    <Layout>
+      Labels
+    </Layout>
+    </div>
 </template>
 
 <script lang ="ts">
 export default {
-    name:"Money",
-};
-</script>
-
-<style>
-</style>
+    name:"Labels",
+}
+</script> 
