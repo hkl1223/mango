@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="item">
-      <router-link to="/money">
+      <router-link to="/money" active-class="selected">
         <svg class="icon">
           <use xlink:href="#icon-money"></use>
         </svg>
@@ -9,7 +9,7 @@
       </router-link>
     </div>
     <div class="item">
-      <router-link to="/labels">
+      <router-link to="/labels" active-class="selected">
         <svg class="icon">
           <use xlink:href="#icon-label"></use>
         </svg>
@@ -17,7 +17,7 @@
       </router-link>
     </div>
     <div class="item">
-      <router-link to="/statistics">
+      <router-link to="/statistics" active-class="selected">
         <svg class="icon">
           <use xlink:href="#icon-tongji1"></use>
         </svg>
@@ -53,6 +53,10 @@ nav {
     flex-direction: column;
     text-align: center;
   }
+}
+.selected {
+  color: #66cc54;
+  background: #fccb2b;
 }
 svg {
   display: block;
