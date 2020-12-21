@@ -44,6 +44,7 @@
           <li>食</li>
           <li>住</li>
           <li>行</li>
+          <li>玩</li>
         </ul>
       </div>
     </Layout>
