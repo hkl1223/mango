@@ -12,9 +12,9 @@
 
 <script lang ="ts">
 import NumberPad from "@/components/money/Number.vue";
-import Types from "@/components/money/Types.vue";
-import Notes from "@/components/money/Notes.vue";
-import Tags from "@/components/money/Tags.vue";
+import Types from "@/components/money/Type.vue";
+import Notes from "@/components/money/Note.vue";
+import Tags from "@/components/money/Tag.vue";
 export default {
   components: { NumberPad, Types, Notes, Tags },
   name: "Money",
