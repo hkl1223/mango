@@ -5,13 +5,13 @@
   </ul>
 </template>
 
-<script lnag ="ts">
+<script lang ="ts">
 import Vue from "Vue";
-import Component from "vue-property-decorator";
+import { Component } from "vue-property-decorator";
 @Component
 export default class Types extends Vue {
   type = "-";
-  selectType(type) {
+  selectType(type: string) {
     if (type !== "-" && type !== "+") {
       throw new Error("type is unknown");
     }
