@@ -1,7 +1,7 @@
 <template>
   <div>
     <Layout classpPrefix="layout">
-      <NumberPad @update:value="onUpdateAmount" />
+      <NumberPad :value.sync="record.amount" @update:value="onUpdateAmount" />
       <Types :value.sync="record.type" />
       <Notes @update:value="onUpdateNotes" />
       <Tags :dataSource.sync="tags" @update:value="onUpdateTags" />
