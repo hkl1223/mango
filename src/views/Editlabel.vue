@@ -1,16 +1,21 @@
 <template>
   <Layout>
     <div class="navBar">
-      <svg class="icon">
+      <svg class="icon" @click="goBack">
         <use xlink:href="#icon-left"></use>
       </svg>
       <span class="title">编辑标签</span>
     </div>
     <div class="form-wrapper">
-      <Notes :value="tag.name" fieldName="标签名" placeholder="请输入标签名" />
+      <Notes
+        :value="tag.name"
+        @update:value="update"
+        fieldName="标签名"
+        placeholder="请输入标签名"
+      />
     </div>
     <div class="button-wrapper">
-      <Button class="remove">删除标签</Button>
+      <Button @click="remove" class="remove">删除标签</Button>
     </div>
   </Layout>
 </template>
@@ -37,6 +42,19 @@ export default class Editlabel extends Vue {
     } else {
       this.$router.replace("/404");
     }
+  }
+  update(name: string) {
+    if (this.tag) {
+      tagListModel.update(this.tag.id, name);
+    }
+  }
+  remove() {
+    if (this.tag) {
+      tagListModel.remove(this.tag.id);
+    }
+  }
+  goBack(){
+      this.$router.back();
   }
 }
 </script>
