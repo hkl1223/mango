@@ -12,7 +12,7 @@
         </router-link>
       </div>
       <div class="createTag-Wrapper">
-        <button class="createTag" @click="createTag">新建标签</button>
+        <Button class="createTag" @click="createTag">新建标签</Button>
       </div>
     </Layout>
   </div>

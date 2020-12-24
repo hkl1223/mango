@@ -1,11 +1,16 @@
 <template>
   <Layout>
-    <div>
+    <div class="navBar">
       <svg class="icon">
         <use xlink:href="#icon-left"></use>
       </svg>
-      <span>编辑标签</span>
-      <Notes fieldName="标签名" placeholder="请输入标签名"/>
+      <span class="title">编辑标签</span>
+    </div>
+    <div class="form-wrapper">
+      <Notes fieldName="标签名" placeholder="请输入标签名" />
+    </div>
+    <div class="button-wrapper">
+      <Button class="remove">删除标签</Button>
     </div>
   </Layout>
 </template>
@@ -14,11 +19,11 @@
 import tagListModel from "@/models/tagListModel";
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import Notes from '@/components/money/Note.vue'
-import { component } from "vue/types/umd";
+import Notes from "@/components/money/Note.vue";
 
 @Component({
-    components:{Notes}
+  components: { Notes},
+  
 })
 export default class Editlabel extends Vue {
   created() {
@@ -36,8 +41,37 @@ export default class Editlabel extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.navBar {
+  text-align: center;
+  font-size: 16px;
+  padding: 12px 0;
+  background: white;
+  align-items: center;
+  display: block;
+  position: relative;
+}
 .icon {
   width: 1em;
   height: 1em;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+.form-wrapper {
+  background: white;
+  margin-top: 8px;
+}
+.button-wrapper {
+  text-align: center;
+  padding: 16px;
+  margin-top: 44-16px;
+  > .remove {
+    background: #d9d9d9;
+    color: #333;
+    border-radius: 4px;
+    border: none;
+    height: 40px;
+    padding: 0 16px;
+  }
 }
 </style>
