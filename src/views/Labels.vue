@@ -2,9 +2,12 @@
   <div>
     <Layout>
       <div class="tags">
-         <router-link class="tag"
-                   v-for="tag in tags" :key="tag.id"
-                   :to="`/labels/edit/${tag.id}`">
+        <router-link
+          class="tag"
+          v-for="tag in tags"
+          :key="tag.id"
+          :to="`/labels/edit/${tag.id}`"
+        >
           <span>{{ tag.name }}</span>
           <svg class="icon">
             <use xlink:href="#icon-right"></use>
@@ -22,11 +25,10 @@
 import Vue from "vue";
 import tagListModel from "@/models/tagListModel";
 import { Component } from "vue-property-decorator";
-tagListModel.fetch();
 
 @Component
 export default class Lables extends Vue {
-  tags = tagListModel.data;
+  tags = window.tagList;
 
   createTag() {
     const name = window.prompt("请输入标签名");
@@ -47,7 +49,7 @@ export default class Lables extends Vue {
   background: white;
   font-size: 16px;
   padding-left: 16px;
-  
+
   > .tag {
     min-height: 44px;
     display: flex;
