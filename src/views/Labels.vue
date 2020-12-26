@@ -25,15 +25,16 @@
 import Vue from "vue";
 import tagListModel from "@/models/tagListModel";
 import { Component } from "vue-property-decorator";
+import store from "@/store/index2";
 
 @Component
 export default class Lables extends Vue {
-  tags = window.tagList;
+  tags = store.tagList;
 
   createTag() {
     const name = window.prompt("请输入标签名");
     if (name) {
-      window.crateTag(name);
+      store.crateTag(name);
     }
   }
 }
