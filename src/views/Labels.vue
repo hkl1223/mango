@@ -23,7 +23,6 @@
 
 <script lang ="ts">
 import Vue from "vue";
-import tagListModel from "@/models/tagListModel";
 import { Component } from "vue-property-decorator";
 import store from "@/store/index2";
 
