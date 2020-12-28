@@ -10,7 +10,7 @@
           @update:value="onUpdateNotes"
         />
       </div>
-      <Tags :dataSource.sync="tags" @update:value="onUpdateTags" />
+      <Tags />
     </Layout>
   </div>
 </template>
@@ -35,12 +35,15 @@ type RecordItem = {
 
 @Component({
   components: { NumberPad, Types, Notes, Tags },
+
+  computed:{
+    recordList(){
+      return store.recordList;
+    }
+}
 })
+
 export default class Money extends Vue {
-  tags = store.tagList;
-
-  recordList = store.recordList;
-
   record: RecordItem = {
     tags: [],
     notes: "",
@@ -48,9 +51,6 @@ export default class Money extends Vue {
     amount: 0,
   };
 
-  onUpdateTags(value: string[]) {
-    this.record.tags = value;
-  }
   onUpdateNotes(value: string) {
     this.record.notes = value;
   }
