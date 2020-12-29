@@ -28,14 +28,11 @@ import mixins from "vue-class-component";
 import Button from "@/components/Button.vue";
 import TagHelper from "@/minixs/tagHelper";
 
-@Component({
-  computed: {
-    tags() {
-      return this.$store.state.tagList;
-    },
-  },
-})
+@Component
 export default class Lables extends mixins(TagHelper) {
+  get tags() {
+    return this.$store.state.tagList;
+  }
   beforeCreate() {
     this.$store.commit("fetchTags");
   }
