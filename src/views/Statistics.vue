@@ -16,7 +16,7 @@
         <ol>
           <li v-for="item in group.items" :key="item.id" class="record">
             <span>{{ tagString(item.tags) }}</span>
-            <span class="notes">{{ item.notes }}</span>
+            <span class="notes">{{ item.notes }} </span>
             <span> ￥{{ item.amount }}</span>
           </li>
         </ol>
@@ -31,6 +31,7 @@ import Tabs from "@/components/Tab.vue";
 import { Component } from "vue-property-decorator";
 import intervalList from "@/constants/intervalList";
 import recordTypeList from "@/constants/recordTypeList";
+
 @Component({
   components: { Tabs },
 })
@@ -44,7 +45,7 @@ export default class Statistics extends Vue {
 
   get result() {
     const { recordList } = this;
-    type HashTableValue = { title: string; items: RecordList[] };
+    type HashTableValue = { title: string; items: RecordItem[] };
     const hashTable: { [key: string]: HashTableValue } = {};
     for (let i = 0; i < recordList.length; i++) {
       const [date, time] = recordList[i].createdAt!.split("T");

@@ -23,7 +23,7 @@ import Tabs from "@/components/Tab.vue";
 import Notes from "@/components/money/Note.vue";
 import Tags from "@/components/money/Tag.vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
-import recordTypeList from "@/constans/recordTypeList";
+import recordTypeList from "@/constants/recordTypeList";
 
 type RecordItem = {
   tags: string[];
