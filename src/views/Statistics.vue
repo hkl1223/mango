@@ -20,13 +20,12 @@
 
 <script lang ="ts">
 import Vue from "vue";
-import Type from "@/components/money/Type.vue";
 import Tabs from "@/components/Tabs.vue";
 import { Component } from "vue-property-decorator";
 import intervalList from "@/constans/intervalList";
 import recordTypeList from "@/constans/recordTypeList";
 @Component({
-  components: { Type, Tabs },
+  components: { Tabs },
 })
 export default class Statistics extends Vue {
   type = "-";
