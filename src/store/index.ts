@@ -6,7 +6,7 @@ import router from '@/router'
 Vue.use(Vuex);
 
 
-const store = new Vuex.Store({
+const store: any = new Vuex.Store({
   state: {
     recordList: [],
     createTagError: null,
