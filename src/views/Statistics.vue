@@ -102,6 +102,9 @@ export default class Statistics extends Vue {
           "29",
           "30",
         ],
+        axisTick:{
+          alignWithLabel:true
+        }
       },
       yAxis: {
         type: "value",
@@ -109,6 +112,7 @@ export default class Statistics extends Vue {
       },
       series: [
         {
+          symbolSize:10,
           data: [
             820,
             932,
@@ -138,6 +142,8 @@ export default class Statistics extends Vue {
             1290,
             1330,
             1320,
+            1,
+            2,
           ],
           type: "line",
         },
