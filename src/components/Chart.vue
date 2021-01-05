@@ -5,17 +5,18 @@
 <script lang ="ts">
 import Vue from "vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
-import echarts, { EChartsOption } from "echarts";
+import { EChartsOption } from "echarts";
+import * as echarts from "echarts";
 @Component
 export default class Chart extends Vue {
   @Prop() options?: EChartsOption;
   mounted() {
-   
-   if(this.options===undefined){
-     return console.log('option 为空')
-   }
-     const chart = echarts.init(this.$refs.wrapper as HTMLDivElement)
-      chart.setOption(this.options)
+    if (this.options === undefined) {
+      return console.log("option 为空");
+    }
+    const chart = echarts.init(this.$refs.wrapper as HTMLDivElement);
+    chart.setOption(this.options);
+    console.log(chart);
   }
 }
 </script>
