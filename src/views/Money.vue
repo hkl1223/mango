@@ -3,6 +3,14 @@
     <Layout classpPrefix="layout">
       <NumberPad :value.sync="record.amount" @submit="saveRecord" />
       <Tabs :data-source="recordTypeList" :value.sync="record.type" />
+      <div class="createdAt">
+        <Notes
+          fieldName="日期"
+          type="date"
+          placeholder="在这里输入日期"
+          :value.sync="record.createdAt"
+        />
+      </div>
       <div class="notes">
         <Notes
           fieldName="备注"
@@ -25,14 +33,6 @@ import Tags from "@/components/money/Tag.vue";
 import { Component, Prop, Watch } from "vue-property-decorator";
 import recordTypeList from "@/constants/recordTypeList";
 
-type RecordItem = {
-  tags: string[];
-  notes: string;
-  type: string;
-  amount: number;
-  createdAt?: Date;
-};
-
 @Component({
   components: { NumberPad, Tabs, Notes, Tags },
 })
@@ -46,6 +46,7 @@ export default class Money extends Vue {
     notes: "",
     type: "-",
     amount: 0,
+    createdAt: new Date().toISOString(),
   };
 
   created() {
