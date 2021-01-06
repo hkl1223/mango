@@ -44,7 +44,8 @@ export default class Statistics extends Vue {
     return tags.length === 0 ? "无" : tags.map((t) => t.name).join("，");
   }
   mounted() {
-   (this. $refs.chartWrapper as HTMLDivElement).scrollLeft=999;
+    const div = this.$refs.chartWrapper as HTMLDivElement;
+    div.scrollLeft = div.scrollWidth;
   }
   beautify(string: string) {
     const day = dayjs(string);
@@ -64,9 +65,9 @@ export default class Statistics extends Vue {
 
   get x() {
     return {
-      grid:{
-        left:0,
-        right:0,
+      grid: {
+        left: 0,
+        right: 0,
       },
       xAxis: {
         type: "category",
@@ -102,17 +103,18 @@ export default class Statistics extends Vue {
           "29",
           "30",
         ],
-        axisTick:{
-          alignWithLabel:true
-        }
+        axisTick: { alignWithLabel: true },
+        axisLine: { lineStyle: { color: "#666" } },
       },
       yAxis: {
         type: "value",
-        show:false,
+        show: false,
       },
       series: [
         {
-          symbolSize:10,
+          symbol: "circle",
+          symbolSize: 10,
+          itemStyle: { borderWidth: 1, color: "#666" },
           data: [
             820,
             932,
@@ -148,7 +150,12 @@ export default class Statistics extends Vue {
           type: "line",
         },
       ],
-      tooltip: { show: true },
+      tooltip: {
+        show: true,
+        triggerOn: "click",
+        position: "top",
+        formatter: "{c}",
+      },
     };
   }
 
@@ -246,12 +253,11 @@ export default class Statistics extends Vue {
 }
 .chart {
   width: 430%;
-  &-wrapper{
+  &-wrapper {
     overflow: auto;
-    &::-webkit-scrollbar{
+    &::-webkit-scrollbar {
       display: none;
     }
   }
 }
-
 </style>
