@@ -16,7 +16,6 @@ export default class Chart extends Vue {
     }
     const chart = echarts.init(this.$refs.wrapper as HTMLDivElement);
     chart.setOption(this.options);
-    console.log(chart);
   }
 }
 </script>
