@@ -35,7 +35,7 @@ import recordTypeList from "@/constants/recordTypeList";
 import dayjs from "dayjs";
 import clone from "@/lib/clone";
 import Chart from "@/components/Chart.vue";
-import _, { values } from "lodash";
+import _ from "lodash";
 import day from "dayjs";
 
 @Component({
