@@ -23,7 +23,6 @@
   </div>
 </template>
 
-
 <script lang="ts">
 import Vue from "vue";
 import NumberPad from "@/components/money/Number.vue";

@@ -16,6 +16,4 @@ body {
   font-family: $font-hei;
   background: #f5f5f5;
 }
-
-
 </style>
